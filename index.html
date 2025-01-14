@@ -18,18 +18,31 @@
 <body>
 
 
-    <button onclick="on()" class="btn bg-warning mt-5"> ligth On</button>
+    <button onclick="on()" class="btn bg-warning mt-5" id="btn">ligth On</button>
     <img id="myImage" src="pic_bulboff.gif" style="width:200px" class="mt-5">
-    <button onclick="of()" class="btn bg-secondary mt-5">light off</button>
+    <!-- <button onclick="of()" class="btn bg-secondary mt-5">light off</button> -->
 
 
     <script>
-        function of() {
-            document.getElementById("myImage").src = 'pic_bulboff.gif'
-        }
+        let flag = true;
+let btn = document.getElementById("btn")
+        
         function on() {
-            document.getElementById("myImage").src = 'pic_bulbon.gif'
+if(flag){
+
+    document.getElementById("myImage").src = 'pic_bulbon.gif';
+      btn.innerText = `Light Off`
+      flag = false;
+
+}else{
+    document.getElementById("myImage").src = 'pic_bulboff.gif';
+      btn.innerText = `Light On`
+      flag = true;
+}
         }
+        // function on() {
+        //     document.getElementById("myImage").src = 'pic_bulbon.gif'
+        // }
     </script>
 </body>
 
